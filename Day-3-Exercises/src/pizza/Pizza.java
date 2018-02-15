@@ -4,32 +4,33 @@ import java.util.List;
 
 public class Pizza {
 	private List<String> toppingsList;
-	private List<String> doughList;
-	private List<String> sizeList;
-	private List<String> deliveryList;
+	private String doughList;
+	private String sizeList;
+	private String deliveryList;
 	private double cost;
+	
 	public List<String> getToppingsList() {
 		return toppingsList;
 	}
 	public void setToppingsList(List<String> toppingsList) {
 		this.toppingsList = toppingsList;
 	}
-	public List<String> getDoughList() {
+	public String getDoughList() {
 		return doughList;
 	}
-	public void setDoughList(List<String> doughList) {
+	public void setDoughList(String doughList) {
 		this.doughList = doughList;
 	}
-	public List<String> getSizeList() {
+	public String getSizeList() {
 		return sizeList;
 	}
-	public void setSizeList(List<String> sizeList) {
+	public void setSizeList(String sizeList) {
 		this.sizeList = sizeList;
 	}
-	public List<String> getDeliveryList() {
+	public String getDeliveryList() {
 		return deliveryList;
 	}
-	public void setDeliveryList(List<String> deliveryList) {
+	public void setDeliveryList(String deliveryList) {
 		this.deliveryList = deliveryList;
 	}
 	public double getCost() {

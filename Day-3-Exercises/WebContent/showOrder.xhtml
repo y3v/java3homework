@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+<title>Insert title here</title>
+</h:head>
+
+<h:body>
+
+<h:form>
+</h:form>
+<h2>Order Placed!</h2>
+<h2>Cost: <h:outputText value="#{pizzaNav.pizza.cost}">
+    <f:convertNumber type="currency" currencySymbol="$" />
+</h:outputText></h2>
+
+<h3>Toppings</h3>
+<ui:repeat value="#{pizzaNav.pizza.toppingsList}" var="value">
+    #{value} <br />
+</ui:repeat>
+
+<h3>Size</h3>
+<p>#{pizzaNav.pizza.sizeList}</p>
+
+<h3>Dough</h3>
+<p>#{pizzaNav.pizza.doughList}</p>
+
+<h3>Delivery Method</h3>
+<p>#{pizzaNav.pizza.deliveryList}</p>
+
+<f:view>
+
+</f:view>
+
+</h:body>
+
+</html>

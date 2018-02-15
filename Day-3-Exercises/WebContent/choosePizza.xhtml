@@ -13,18 +13,22 @@
 <h3>DIY Pizza</h3>
 <h:form>
 	<h:outputLabel>Choose Toppings</h:outputLabel>
-	<h:selectManyCheckbox value="pizzaNav.pizza.toppings">
+	<h:selectManyCheckbox value="#{pizzaNav.toppings}">
 		<f:selectItems value="#{pizzaOptions.toppingsList}"></f:selectItems>
 	</h:selectManyCheckbox><br></br>
 	<h:outputLabel>Choose Dough</h:outputLabel>
-	<h:selectOneMenu>
+	<h:selectOneMenu value="#{pizzaNav.dough}">
 		<f:selectItems value="#{pizzaOptions.doughList}"></f:selectItems>
 	</h:selectOneMenu><br></br>
 	<h:outputLabel>Choose Size</h:outputLabel>
-	<h:selectOneRadio>
+	<h:selectOneRadio value="#{pizzaNav.size}">
 		<f:selectItems value="#{pizzaOptions.sizeList}"></f:selectItems>
 	</h:selectOneRadio><br></br>
-	<h:commandButton value="Place Order"></h:commandButton>
+	<h:outputLabel>Delivery Method</h:outputLabel>
+	<h:selectOneRadio value="#{pizzaNav.delivery}">
+		<f:selectItems value="#{pizzaOptions.deliveryList}"></f:selectItems>
+	</h:selectOneRadio><br></br>
+	<h:commandButton value="Place Order" action="#{pizzaNav.placeOrder}"></h:commandButton>
 </h:form>
 
 <f:view>

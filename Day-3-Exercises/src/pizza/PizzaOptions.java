@@ -12,10 +12,10 @@ import javax.faces.bean.ManagedBean;
 @ApplicationScoped
 
 public class PizzaOptions {
-	private Map<String,String> toppings = new HashMap<String,String>();
-	private Map<String,Double> dough = new HashMap<String,Double>();
-	private Map<String,Double> size = new HashMap<String,Double>();
-	private Map<String,Double> delivery = new HashMap<String,Double>();
+	private static Map<String,String> toppings = new HashMap<String,String>();
+	private static Map<String,Double> dough = new HashMap<String,Double>();
+	private static Map<String,Double> size = new HashMap<String,Double>();
+	private static Map<String,Double> delivery = new HashMap<String,Double>();
 	private List<String> toppingsList;
 	private List<String> doughList;
 	private List<String> sizeList;
@@ -60,14 +60,14 @@ public class PizzaOptions {
 		deliveryList = new ArrayList<String>(delivery.keySet());
 	}
 
-	public Map<String, Double> getDelivery() {
+	public static Map<String, Double> getDelivery() {
 		return delivery;
 	}
 
 
 
-	public void setDelivery(Map<String, Double> delivery) {
-		this.delivery = delivery;
+	public static void setDelivery(Map<String, Double> delivery) {
+		PizzaOptions.delivery = delivery;
 	}
 
 
@@ -120,28 +120,28 @@ public class PizzaOptions {
 
 
 
-	public Map<String, String> getToppings() {
+	public static Map<String, String> getToppings() {
 		return toppings;
 	}
 
-	public void setToppings(Map<String, String> toppings) {
-		this.toppings = toppings;
+	public static void setToppings(Map<String, String> toppings) {
+		PizzaOptions.toppings = toppings;
 	}
 
-	public Map<String, Double> getDough() {
+	public static Map<String, Double> getDough() {
 		return dough;
 	}
 
-	public void setDough(Map<String, Double> dough) {
-		this.dough = dough;
+	public static void setDough(Map<String, Double> dough) {
+		PizzaOptions.dough = dough;
 	}
 
-	public Map<String, Double> getSize() {
+	public static Map<String, Double> getSize() {
 		return size;
 	}
 
-	public void setSize(Map<String, Double> size) {
-		this.size = size;
+	public static void setSize(Map<String, Double> size) {
+		PizzaOptions.size = size;
 	}
 	
 }
