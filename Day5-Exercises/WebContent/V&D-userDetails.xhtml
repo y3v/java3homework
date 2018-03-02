@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+<title>Insert title here</title>
+</h:head>
+
+<h:body>
+
+<h:form>
+
+<h:outputText value="Fix Errors Marked Below" rendered="${not empty facesContext.messageList}"></h:outputText>
+<h:panelGrid columns="3">
+	First name: <h:inputText id="fname"
+				required="true"
+				requiredMessage="You must enter a first name"
+				validatorMessage="First name can not exceed 20 chars">
+				<f:validateLength maximum="20"></f:validateLength></h:inputText>
+				<h:message for="fname"/>
+				
+	Last name: <h:inputText id="lname"
+				value="#{user.lname}"
+				required="true"
+				requiredMessage="You must enter a last name"
+				validatorMessage="Last name may not exceed 30 chars">
+				<f:validateLength maximum="30"></f:validateLength></h:inputText>
+				<h:message for="lname"/>
+	
+	Age: <h:inputText id="age" 
+				required="true" 
+				value="#{user.age}" 
+				requiredMessage="Please enter your age"
+				converterMessage="Age must be between 18 and 99"> 
+				<f:validateDoubleRange minimum="18" maximum="99"/></h:inputText>
+				<h:message for="age"/>
+				
+	Last Employment Date (mm/dd/yyyy): <h:inputText id="date" 
+				required="true" 
+				value="#{user.date}" 
+				requiredMessage="Date required"
+				converterMessage="Please use the correct format (mm/dd/yyyy)"> 
+				<f:convertDateTime pattern="MM/dd/yyyy"></f:convertDateTime></h:inputText>
+				<h:message for="date"/>
+				
+</h:panelGrid>
+
+<h:commandButton value="Login!" action="#{user.login}"></h:commandButton>
+
+</h:form>
+
+<f:view>
+
+</f:view>
+
+</h:body>
+
+</html>

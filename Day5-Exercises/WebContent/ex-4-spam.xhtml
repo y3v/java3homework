@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+<title>Insert title here</title>
+</h:head>
+
+<h:body>
+
+<h:form>
+
+<h:outputText value="Fix Errors Marked Below" rendered="${not empty facesContext.messageList}"></h:outputText>
+<h:panelGrid columns="3">
+	Email: <h:inputText id="email"
+				required="true"
+				requiredMessage="Enter your email"
+				validatorMessage="Invalid format">
+				<f:validateRegex pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"/></h:inputText>
+				<h:message for="email"/>
+				
+	1st url: <h:inputText id="url1"
+				required="true"
+				requiredMessage="You must enter a URL"
+				validatorMessage="Invalid URL">
+				<f:validateRegex pattern="[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?//=]*)"/></h:inputText>
+				<h:message for="url1"/>
+	
+	2nd url: <h:inputText id="url2" 
+				required="true" 
+				requiredMessage="Please enter a URL"
+				converterMessage="Invalid URL"> 
+				<f:validateRegex pattern="[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?//=]*)"/></h:inputText>
+				<h:message for="url2"/>
+				
+</h:panelGrid>
+
+<h:commandButton value="Login!" action="next.xhtml"></h:commandButton>
+
+</h:form>
+
+<f:view>
+
+</f:view>
+
+</h:body>
+
+</html>
